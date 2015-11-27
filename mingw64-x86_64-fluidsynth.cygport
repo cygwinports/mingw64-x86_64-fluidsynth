@@ -1,0 +1,27 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-fluidsynth"
+VERSION=1.1.6
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="SoundFont software synthesizer for Win64 toolchain"
+DESCRIPTION="FluidSynth is a real-time software synthesizer based on the
+SoundFont 2 specifications."
+HOMEPAGE="http://sourceforge.net/apps/trac/fluidsynth/"
+SRC_URI="mirror://sourceforge/fluidsynth/fluidsynth-${VERSION}.tar.bz2"
+SRC_DIR="fluidsynth-${VERSION}"
+PATCH_URI="1.1.5-vpath.patch"
+
+# dbus-support:  only for RealtimeKit
+CYGCONF_ARGS="
+	--disable-alsa-support
+	--disable-oss-support
+	--disable-midishare
+	--disable-coreaudio
+	--disable-dbus-support
+	--disable-lash
+	--disable-ladcca
+	lt_cv_deplibs_check_method=pass_all
+"
+MAKEOPTS+=" bin_PROGRAMS= man_MANS= "

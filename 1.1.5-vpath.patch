@@ -1,0 +1,12 @@
+--- origsrc/fluidsynth-1.1.5/src/Makefile.am	2011-09-04 02:38:58.000000000 -0500
++++ src/fluidsynth-1.1.5/src/Makefile.am	2011-10-06 23:27:55.652714700 -0500
+@@ -164,7 +169,8 @@ libfluidsynth_la_SOURCES = \
+     bindings/fluid_ladspa.h \
+     bindings/fluid_filerenderer.c 
+ 
+-INCLUDES = -I$(top_srcdir)/include \
++INCLUDES = -I$(top_builddir)/include \
++  -I$(top_srcdir)/include \
+   -I$(top_srcdir)/src \
+   -I$(top_srcdir)/src/drivers \
+   -I$(top_srcdir)/src/synth \
