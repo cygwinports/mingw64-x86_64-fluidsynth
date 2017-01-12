@@ -3,7 +3,7 @@ inherit cross
 
 NAME="mingw64-x86_64-fluidsynth"
 VERSION=1.1.6
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="SoundFont software synthesizer for Win64 toolchain"
 DESCRIPTION="FluidSynth is a real-time software synthesizer based on the
